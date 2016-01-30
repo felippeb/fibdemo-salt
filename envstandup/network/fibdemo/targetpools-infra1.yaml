@@ -1,0 +1,6 @@
+log1-kibana-pool-client-ip-proto:
+  region: us-central1
+  health_check: none
+  session_affinity: CLIENT_IP_PROTO
+  instances: elasticsearch01-log1,elasticsearch02-log1
+  zone: us-central1-b

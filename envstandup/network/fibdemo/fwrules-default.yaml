@@ -1,0 +1,15 @@
+default-allow-icmp:
+  allow: icmp
+  src_range: 0.0.0.0/0
+
+default-allow-internal:
+  allow: tcp:1-65535,udp:1-65535,icmp
+  src_range: 10.240.0.0/16
+
+default-allow-rdp:
+  allow: tcp:3389
+  src_range: 0.0.0.0/0
+
+default-allow-ssh:
+  allow: tcp:22
+  src_range: 0.0.0.0/0
