@@ -28,7 +28,8 @@ collectd.conf.d:
     - template: jinja
     - user: root
     - group: root
-    - mode: 644
+    - dir_mode: 755
+    - file_mode: 644
 
 collectdpackage:
   pkg.installed:
