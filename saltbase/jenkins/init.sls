@@ -85,6 +85,11 @@ jenkins-service:
       - file: jenkins-default
       - pkg: jenkins
 
+jenkinsusersudo:
+  file.append:
+    - name: /etc/sudoers
+    - source: salt://jenkins/files/jenkins-sudo
+
 /etc/nginx/certs:
   file.directory: []
 
