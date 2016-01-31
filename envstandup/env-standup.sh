@@ -300,7 +300,6 @@ case "$INSTALLTYPE" in
         echoinfo "Proceeding with full installation in project: ${PROJECT}"
         decrypt_keys
         delete_defaultnetwork
-        create_networks
         create_addresses
         create_targetpools
         create_forwardingrules
