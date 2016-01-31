@@ -6,7 +6,7 @@ These scripts will stand up an infrastructure in gce, based on yaml files declar
 
 ##Usage
 
-These scripts provided documentation themselves. You can see their documentation via executation of the script with no arguments, or with the -h switch. i.e:
+These scripts provide documentation themselves. You can see their documentation via executation of the script with no arguments, or with the -h switch. i.e:
 
     $ ./env-standup.sh -h
 
@@ -35,19 +35,19 @@ These scripts make a lot of assumptions about your environment. These have been 
 
 ##Setup
 
-First, install salt-cloud and the google cloud sdk as mentioned above.
+First, install requirements as mentioned above.
 
 #####Decrypt the keys:
 
 ```
-$ ./env-standup.sh decrypt_keys fibdemo us-central1
+$ ./env-standup.sh decrypt_keys fibdemo-1205 us-central1
 ```
 
-The keys will decrypt to salt/fibdemo/cloud.conf.d/
+The keys will decrypt to salt/fibdemo-1205/cloud.conf.d/
 
 #####Copy all salt-cloud files to /etc/
 
-Assuming files are under /home/<user>/repos/:
+Assuming files are under `/home/<user>/repos/fibdemo-salt`:
 
 ```
 $ cd /etc/salt/
@@ -58,7 +58,7 @@ $ sudo cp -r /home/<user>/repos/fibdemo-salt/envstandup/salt/fibdemo-1205/* .
 
 ```
 $ sudo salt-cloud --list-providers
-fibdemo-tenant:
+fibdemo-1205-tenant:
     ----------
     gce:
         ----------
@@ -79,3 +79,9 @@ $ gcloud auth list
 ```
 
 Once installation of gcloud sdk, and salt-cloud are done, you are ready to begin using the scripts. Please refer to the readme does in docs/ or execute the scripts with -h.
+
+The first step would be to try the env-standup.sh script like such:
+
+```
+$ ./env-standup.sh full fibdemo-1205 us-central1
+```
