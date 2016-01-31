@@ -16,6 +16,12 @@ or
 
 The output of help from each script is recorded under the docs directory.
 
+The first step would be to try the env-standup.sh script like such:
+
+```
+$ ./env-standup.sh full fibdemo-1205 us-central1
+```
+
 ##Requirements
 
 These scripts make a lot of assumptions about your environment. These have been tested on a ubuntu 15.10 machine. They require:
@@ -78,10 +84,5 @@ This will open a browser window, and ask you to authenticate with a user which h
 $ gcloud auth list
 ```
 
-Once installation of gcloud sdk, and salt-cloud are done, you are ready to begin using the scripts. Please refer to the readme does in docs/ or execute the scripts with -h.
+Once installation of gcloud sdk, and salt-cloud are done, you are ready to begin using the scripts. Please refer to the usage section of this readme. 
 
-The first step would be to try the env-standup.sh script like such:
-
-```
-$ ./env-standup.sh full fibdemo-1205 us-central1
-```
