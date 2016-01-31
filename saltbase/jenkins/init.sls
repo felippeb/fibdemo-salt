@@ -49,15 +49,6 @@ jenkins-ssh-config:
     - group: jenkins
     - source: salt://jenkins/files/ssh-config
 
-/var/lib/jenkins/plugins:
-  archive.extracted:
-    - source: salt://jenkins/files/plugins.tar.gz
-    - archive_user: jenkins
-    - archive_format: tar
-    - if_missing: /var/lib/jenkins/plugins/salt-extracted.disabled
-    - require:
-      - pkg: jenkins
-
 /var/lib/jenkins/.ssh/id_rsa:
   file.managed:
     - source: salt://jenkins/files/id_rsa

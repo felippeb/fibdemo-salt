@@ -1,5 +1,3 @@
-{%- set collectd_package_ver = pillar['collectd_package_ver'] %}
-
 collectd-5-5.ppa:
   pkgrepo.absent:
     - ppa: rullmann/collectd 
