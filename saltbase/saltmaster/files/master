@@ -1,0 +1,20 @@
+auto_accept: true
+max_open_files: 100000
+worker_threads: 10
+file_roots:
+  base:
+    - /srv/salt
+fileserver_backend:
+  - roots
+  - git
+fileserver_followsymlinks: False
+gitfs_provider: gitpython
+gitfs_remotes:
+  - git@github.com:rhohan/fibdemo-salt.git:
+    - root: saltbase
+    - base: master
+ext_pillar:
+  - git:
+    - master git@github.com:rhohan/fibdemo-salt.git:
+      - root: pillarbase
+      - env: base

@@ -1,0 +1,24 @@
+# Docker Upstart and SysVinit configuration file
+
+# Customize location of Docker binary (especially for development testing).
+#DOCKER="/usr/local/bin/docker"
+
+# Use DOCKER_OPTS to modify the daemon startup options.
+#DOCKER_OPTS="--dns 8.8.8.8 --dns 8.8.4.4"
+DOCKER_OPTS="--insecure-registry 10.0.0.0/8 --insecure-registry 172.16.0.0/12 --insecure-registry dockerrepo01.infra.dpcops.com --insecure-registry dockerrepo02.infra.dpcops.com --storage-driver=devicemapper"
+
+# If you need Docker to use an HTTP proxy, it can also be specified here.
+#export http_proxy="http://127.0.0.1:3128/"
+
+# This is also a handy place to tweak where Docker's temporary files go.
+#export TMPDIR="/mnt/bigdrive/docker-tmp"
+
+{%- if 'kubernetes-pool' in grains['roles'] %}
+DOCKER_OPTS="${DOCKER_OPTS} --bridge cbr0 --iptables=false --ip-masq=false -r=false"
+{%- elif 'kubernetes-pool-nolog' in grains['roles'] %}
+DOCKER_OPTS="${DOCKER_OPTS} --bridge cbr0 --iptables=false --ip-masq=false -r=false"
+{%- elif 'jenkinsslave' in grains['roles'] %}
+DOCKER_OPTS="${DOCKER_OPTS} --log-driver=json-file"
+{%- else %}
+DOCKER_OPTS="${DOCKER_OPTS} --log-driver=syslog"
+{%- endif -%}
