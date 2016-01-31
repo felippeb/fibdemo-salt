@@ -1,0 +1,3 @@
+Host gitlab.ifr.dpccloud.com
+    IdentityFile /var/lib/jenkins/.ssh/gitlab_id_rsa
+    HostName 104.197.53.123 

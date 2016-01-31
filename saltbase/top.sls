@@ -16,6 +16,7 @@ base:
     - match: grain
     - docker
     - gcloud
+    - jenkins
 
   'roles:elasticsearch':
     - match: grain

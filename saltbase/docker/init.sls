@@ -56,7 +56,7 @@ python-pip:
 
 pip-update-docker:
   cmd.run:
-    - unless: 'pip show pip | grep 7.1.2'
+    - unless: 'pip show pip | grep 8.0'
     - name: easy_install -U pip
 
 docker-py:
