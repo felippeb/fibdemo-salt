@@ -134,19 +134,11 @@ grains:
     - saltmaster
 EOF
 
-cat << EOF > /tmp/salt-minion-id
-${VMHOSTNAME}
-EOF
-
 sudo mkdir -p /etc/salt/minion.d/
-sudo mv /tmp/salt-minion-id /etc/salt/minion_id
 sudo mv /tmp/salt-minion /etc/salt/minion.d/master.conf
 sudo mv /tmp/salt-minion-grains /etc/salt/minion.d/grains.conf
 
 sudo apt-get -y -o Dpkg::Options::=--force-confdef -o Dpkg::Options::=--force-confnew install salt-minion
 
-sudo service salt-minion restart
-
-echo "===== sleeping 20 to allow time for master to update"
 sleep 20
 sudo salt-call state.highstate
