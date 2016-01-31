@@ -5,6 +5,9 @@
     - version: 2015.8.3+ds-1 
 {% endfor %}
 
+/etc/salt/master.d/master.conf:
+  file.absent
+
 /etc/salt/master:
   file.managed:
     - source: salt://saltmaster/files/master
