@@ -1,0 +1,13 @@
+fibdemo-kibana-pool-client-ip-proto:
+  region: us-central1
+  health_check: none
+  session_affinity: CLIENT_IP_PROTO
+  instances: elasticsearch01,elasticsearch02
+  zone: us-central1-b
+
+fibdemo-fibdemo-pool-client-ip-proto:
+  region: us-central1
+  health_check: none
+  session_affinity: CLIENT_IP_PROTO
+  instances: fibdemo01,fibdemo02
+  zone: us-central1-b

@@ -1,0 +1,50 @@
+fibdemo-icmp-all:
+  allow: icmp
+  src_range: 10.0.1.0/24
+
+fibdemo-internal-salt01:
+  allow: tcp:4505-4506
+  src_range: 10.0.1.0/24
+  dst_tags: saltmaster
+
+fibdemo-inter-network-ssh:
+  allow: tcp:22
+  src_tags: saltmaster,sprt
+
+fibdemo-allow-gceconsole-ssh:
+  allow: tcp:22
+  src_range: 64.18.0.0/16,64.233.160.0/19,66.102.0.0/16,72.14.192.0/18,74.125.0.0/16,108.177.8.0/21,173.194.0.0/16,209.85.128.0/17,216.58.192.0/19,216.239.32.0/19
+
+fibdemo-ssh-felippeb:
+  allow: tcp:22
+  src_range: 24.2.73.250/32
+
+fibdemo-saltbot-ssh:
+  allow: tcp:22
+  src_range: 24.2.73.250/32
+  dst_tags: saltmaster
+
+fibdemo-https-world:
+  allow: tcp:443
+  src_range: 0.0.0.0/0
+  dst_tags: https-server-world
+
+fibdemo-https-private:
+  allow: tcp:443
+  src_range: 24.2.73.250/32
+  dst_tags: https-server-private
+
+fibdemo-github-to-salt01-api:
+  allow: tcp:8000
+  src_range: 192.30.252.0/22
+  dst_tags: saltmaster 
+
+fibdemo-elasticsearch-to-elasticsearch:
+  allow: tcp:1-65535,udp:1-65535,icmp
+  src_tags: elasticsearch
+  dst_tags: elasticsearch
+
+fibdemo-https-9200-private:
+  allow: tcp:9200
+  src_range: 24.2.73.250/32
+  dst_tags: es-9200-private

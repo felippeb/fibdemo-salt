@@ -1,8 +1,4 @@
-fibdemo-infra1:
+fibdemo:
   cidr: 10.0.1.0/24
-int1:
-  cidr: 10.0.3.0/24
-prd1:
-  cidr: 10.0.7.0/24
 default:
   cidr: 10.240.0.0/16

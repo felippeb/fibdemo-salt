@@ -1,6 +1,0 @@
-int1-fibdemo-rule:
-  address: fibdemo-vip-int1
-  ip_protocol: TCP
-  port_range: 443
-  region: us-central1
-  target_pool: int1-fibdemo-pool-client-ip-proto
