@@ -20,12 +20,18 @@ The output of help from each script is recorded under the docs directory.
 
 These scripts make a lot of assumptions about your environment. These have been tested on a ubuntu 15.10 machine. They require:
 
-salt-cloud:
-  Tested: 2015.8.3+ds-1
-  Install_guide: [saltstack ubunutu installation guide](https://docs.saltstack.com/en/latest/topics/installation/ubuntu.html)
-google cloud sdk:
-  Tested: 94.0.0
-  Install_guide: [google cloud sdk installation guide](https://cloud.google.com/sdk/#debubu)
+######shyaml
+Tested: 0.4.0
+Install_guide: pip install shyaml
+######jq
+Tested: 1.4-2.1
+Install_guide: apt-get install jq
+######salt-cloud
+Tested: 2015.8.3+ds-1
+Install_guide: [saltstack ubunutu installation guide](https://docs.saltstack.com/en/latest/topics/installation/ubuntu.html)
+######google cloud sdk
+Tested: 94.0.0
+Install_guide: [google cloud sdk installation guide](https://cloud.google.com/sdk/#debubu)
 
 ###Setup
 
@@ -39,11 +45,13 @@ $ ./env-standup.sh decrypt_keys fibdemo us-central1
 
 The keys will decrypt to salt/fibdemo/cloud.conf.d/
 
-####Copy all salt-cloud files to /etc/, assuming files are under /home/<user>/repos/
+####Copy all salt-cloud files to /etc/
+
+Assuming files are under /home/<user>/repos/:
 
 ```
 $ cd /etc/salt/
-$ sudo cp -r /home/<user>/repos/fibdemo-salt/envstandup/salt/fibdemo/* .
+$ sudo cp -r /home/<user>/repos/fibdemo-salt/envstandup/salt/fibdemo-1205/* .
 ```
 
 ####Validate that the files moved over correctly by calling salt-cloud:
@@ -62,7 +70,7 @@ fibdemo-tenant:
 $ gcloud auth login
 ```
 
-This will open a browser window, and ask you to authenticate with a user which has access to the project, fibdemo.
+This will open a browser window, and ask you to authenticate with a user which has access to the project, fibdemo-1205.
 
 ####Validate authentication with gcloud
 
