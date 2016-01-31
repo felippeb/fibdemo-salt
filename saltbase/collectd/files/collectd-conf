@@ -1,0 +1,38 @@
+{%- set saltrole = salt['grains.get']('roles')[0] %}
+Hostname "{{ grains['host'] }}"
+{%- if pillar['collectd_interval'][saltrole] is defined %}
+{{ pillar['collectd_interval'][saltrole] }}
+{%- else %}
+Interval 60
+{%- endif %}
+LoadPlugin syslog
+<Plugin syslog>
+	LogLevel info
+</Plugin>
+
+LoadPlugin cpu
+LoadPlugin df
+LoadPlugin load
+LoadPlugin memory
+LoadPlugin swap
+LoadPlugin write_http
+
+LoadPlugin "match_regex"
+
+<Chain "PostCache">
+  <Rule>
+    <Match regex>
+      Plugin "^cpu$"
+      PluginInstance "^[0-9]+$"
+    </Match>
+    <Target write>
+      Plugin "aggregation"
+    </Target>
+    Target stop
+  </Rule>
+  Target "write"
+</Chain>
+
+<Include "/etc/collectd/collectd.conf.d">
+	Filter "*.conf"
+</Include>
