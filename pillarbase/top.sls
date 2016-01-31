@@ -1,0 +1,5 @@
+base:
+  '*':
+    - mine
+    - ntp
+    - users
