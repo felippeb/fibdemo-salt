@@ -20,18 +20,18 @@ The output of help from each script is recorded under the docs directory.
 
 These scripts make a lot of assumptions about your environment. These have been tested on a ubuntu 15.10 machine. They require:
 
-######shyaml
-Tested: 0.4.0
-Install_guide: pip install shyaml
-######jq
-Tested: 1.4-2.1
-Install_guide: apt-get install jq
-######salt-cloud
-Tested: 2015.8.3+ds-1
-Install_guide: [saltstack ubunutu installation guide](https://docs.saltstack.com/en/latest/topics/installation/ubuntu.html)
-######google cloud sdk
-Tested: 94.0.0
-Install_guide: [google cloud sdk installation guide](https://cloud.google.com/sdk/#debubu)
+- shyaml
+  - Tested: 0.4.0
+  - Install_guide: pip install shyaml
+- jq
+  - Tested: 1.4-2.1
+  - Install_guide: apt-get install jq
+- salt-cloud
+  - Tested: 2015.8.3+ds-1
+  - Install_guide: [saltstack ubunutu installation guide](https://docs.saltstack.com/en/latest/topics/installation/ubuntu.html)
+- google cloud sdk
+  - Tested: 94.0.0
+  - Install_guide: [google cloud sdk installation guide](https://cloud.google.com/sdk/#debubu)
 
 ###Setup
 
