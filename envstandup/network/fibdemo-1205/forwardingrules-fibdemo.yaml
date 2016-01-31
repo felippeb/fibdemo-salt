@@ -1,19 +1,16 @@
 fibdemo-kibana-rule:
-  address: kibana-vip-fibdemo
   ip_protocol: TCP
   port_range: 443
   region: us-east1
   target_pool: fibdemo-kibana-pool-client-ip-proto
 
 fibdemo-kibana-rule-9200:
-  address: kibana-vip-fibdemo
   ip_protocol: TCP
   port_range: 9200
   region: us-east1
   target_pool: fibdemo-kibana-pool-client-ip-proto
 
 fibdemo-fibdemo-rule:
-  address: fibdemo-vip-fibdemo
   ip_protocol: TCP
   port_range: 443
   region: us-central1

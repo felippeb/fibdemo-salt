@@ -117,7 +117,7 @@ create_address() {
     OUTPUT="$(sudo salt-cloud -l error -f create_address ${PROJECT}-tenant name=${address_name} region=${REGION} 2>&1)"
     echoinfo "output of create attempt for address: ${address_name}"
     __saltcloud_output_handler "${OUTPUT}" "address" "${address_name}"
-    if [[ ${address_name} =~ haproxy ]] || [[ ${address_name} =~ nginx ]] || [[ ${address_name} =~ esagg ]]; then
+    if [[ ${address_name} =~ fibdemo ]];  then
         echoinfo "updating forwardingrules file with new ip addresses"
         external_address=$(salt-cloud -f show_address ${PROJECT}-tenant name=${address_name} region=${REGION} --output=json -l error| jq -c -r '.["'${PROJECT}'-tenant"].gce.address')
         echoinfo "External Address is: ${external_address}"
@@ -185,9 +185,15 @@ create_forwardingrule() {
     while read_keys key value; do
     local $(echo $key)="$(echo $value)"
     done < <(cat ${__DIRNAME}/network/${PROJECT}/forwardingrules-${NETWORK}.yaml | shyaml key-values-0 ${frule_name})
-    OUTPUT="$(gcloud compute --project "${PROJECT}" forwarding-rules create "${frule_name}" --region "${REGION}" --address "${address}" --ip-protocol "${ip_protocol}" --port-range "${port_range}" --target-pool "${target_pool}" -q 2>&1)"
-    echoinfo "output of creation attempt for forwardingrule: ${frule_name}"
-    __gcloud_output_handler "${OUTPUT}" "forwardingrule" "${frule_name}"
+    if [ -z "${address}" ]; then
+        OUTPUT="$(gcloud compute --project "${PROJECT}" forwarding-rules create "${frule_name}" --region "${REGION}" --ip-protocol "${ip_protocol}" --port-range "${port_range}" --target-pool "${target_pool}" -q 2>&1)"
+        echoinfo "output of creation attempt for forwardingrule: ${frule_name}"
+        __gcloud_output_handler "${OUTPUT}" "forwardingrule" "${frule_name}"
+    else
+        OUTPUT="$(gcloud compute --project "${PROJECT}" forwarding-rules create "${frule_name}" --region "${REGION}" --address "${address}" --ip-protocol "${ip_protocol}" --port-range "${port_range}" --target-pool "${target_pool}" -q 2>&1)"
+        echoinfo "output of creation attempt for forwardingrule: ${frule_name}"
+        __gcloud_output_handler "${OUTPUT}" "forwardingrule" "${frule_name}"
+    fi
 }
 
 delete_forwardingrule() {
