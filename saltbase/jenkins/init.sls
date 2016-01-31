@@ -135,6 +135,10 @@ jenkinsusersudo:
     - user: www-data
     - group: www-data
 
+pip-nose-jenkins:
+  pip.installed:
+    - name: nose
+
 extend:
   nginx:
     service.running:
