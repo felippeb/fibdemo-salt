@@ -84,6 +84,33 @@ jenkins-service:
       - file: jenkins-default
       - pkg: jenkins
 
+/etc/nginx/certs:
+  file.directory: []
+
+/etc/nginx/certs/jenkins.key:
+  x509.private_key_managed:
+    - bits: 4096
+    - backup: True
+    - require:
+      - file: /etc/nginx/certs
+
+/etc/nginx/certs/jenkins.crt:
+  x509.certificate_managed:
+    - signing_private_key: /etc/nginx/certs/jenkins.key
+    - CN: jenkins.fibdemo.com
+    - C: US
+    - ST: Utah
+    - L: Salt Lake City
+    - basicConstraints: "critical CA:true"
+    - keyUsage: "critical cRLSign, keyCertSign"
+    - subjectKeyIdentifier: hash
+    - authorityKeyIdentifier: keyid,issuer:always
+    - days_valid: 365
+    - days_remaining: 0
+    - backup: True
+    - require:
+      - x509: /etc/nginx/certs/jenkins.key
+
 /etc/nginx/sites-available/jenkins.conf:
   file:
     - managed
@@ -93,6 +120,7 @@ jenkins-service:
     - group: www-data
     - mode: 440
     - require:
+      - x509: /etc/nginx/certs/jenkins.crt
       - pkg: jenkins
 
 /etc/nginx/sites-enabled/jenkins.conf:
