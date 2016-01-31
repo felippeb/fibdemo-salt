@@ -41,6 +41,7 @@ docker-gcr-login-script:
   file.managed:
     - name: /opt/gcloud/docker-gcr-login.sh
     - source: salt://docker/files/docker-gcr-login.sh
+    - makedirs: True
     - user: root
     - group: root
     - mode: 755
