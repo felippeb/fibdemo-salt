@@ -288,7 +288,7 @@ fi
 # Define network list
 if [ "${#NETWORKLIST[@]}" -eq 0 ] || [ "${NETWORKLIST[0]}" == "all" ];then
     if [ "${PROJECT}" == "fibdemo" ]; then
-        NETWORKLIST=(infra1 int1)
+        NETWORKLIST=(fibdemo)
     fi
 fi
 

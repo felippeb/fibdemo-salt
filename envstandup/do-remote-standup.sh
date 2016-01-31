@@ -53,7 +53,7 @@ echowarn() {
 
 find_saltmaster() {
     echoinfo "finding saltmaster in ${NETWORK}"
-    SALTMASTER_IP=$(salt-cloud -f show_address ${PROJECT}-tenant name=salt01-${NETWORK} region=${REGION} --output=json -l error| jq -c -r '.["'${PROJECT}'-tenant"].gce.address')
+    SALTMASTER_IP=$(salt-cloud -S --out=json -l quiet | jq -c -r '.["fibdemo-tenant"].gce.salt01.public_ips[0]')
     SALTBOTSSH="ssh saltbot@${SALTMASTER_IP} -i ${__DIRNAME}/salt/${PROJECT}/cloud.conf.d/id_rsa_saltbot -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null -oControlPath=none -oPasswordAuthentication=no -oChallengeResponseAuthentication=no -oPubkeyAuthentication=yes -oKbdInteractiveAuthentication=no"
 }
 

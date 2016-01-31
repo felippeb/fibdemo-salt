@@ -47,6 +47,12 @@ grains:
   roles:
     - ${ROLES}
 EOF
+sudo mv /tmp/salt-minion-grains /etc/salt/minion.d/grains.conf
+
+cat << EOF > /tmp/salt-minion
+master: ${SALTMASTER}
+EOF
+sudo mv /tmp/salt-minion /etc/salt/minion.d/master.conf
 
 echo "===== restarting minion"
 sudo service salt-minion restart
