@@ -36,14 +36,16 @@ collectdpackage:
     - sources:
       - collectd: salt://collectd/files/collectd_5.5.0.178.geab8493-1~trusty_amd64.deb
     - require:
-      - file: collectdconf
+      - file: collectd.conf
+      - file: collectd.conf.d
 
 collectd-core-package:
   pkg.installed:
     - sources:
       - collectd-core: salt://collectd/files/collectd-core_5.5.0.178.geab8493-1~trusty_amd64.deb
     - require:
-      - file: collectdconf
+      - file: collectd.conf
+      - file: collectd.conf.d
 
 /usr/share/collectd/sockstat.py:
   file.managed:
