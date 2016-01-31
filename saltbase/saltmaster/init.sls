@@ -41,6 +41,7 @@ elasticsearch_returner.py:
     - watch:
       - file: /etc/salt/master
       - file: /etc/salt/master.d
+      - file: /etc/salt/master.d/master.conf
     - require:
       - pkg: salt-master-pkg
 {% endfor %}
