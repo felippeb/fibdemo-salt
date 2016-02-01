@@ -109,7 +109,7 @@ extend:
   collectd:
     service.running:
       - watch:
-      {% if '01' in grains['id'] -%}
+      {% if '01' in grains['id'] %}
         - file: /etc/collectd/collectd.conf.d/elasticearch-node.conf
       {% else %}
         - file: /etc/collectd/collectd.conf.d/elasticearch-cluster.conf{% endif %}
