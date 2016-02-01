@@ -1,6 +1,7 @@
 include:
   - nginx
   - git
+  - docker
 
 pkg-core-jenkins:
   pkg.installed:
@@ -30,8 +31,10 @@ jenkins_user:
     - shell: /bin/bash
     - groups:
       - jenkins
+      - docker
     - require:
       - group: jenkins_group
+      - pkg: docker-package
 
 jenkins-default:
   file.managed:
