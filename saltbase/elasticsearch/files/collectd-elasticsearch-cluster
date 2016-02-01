@@ -1,0 +1,260 @@
+<Chain "RenameES">
+
+  <Rule "rename_es_cluster">
+    <Match regex>
+      Plugin "^curl_json$"
+      PluginInstance "elasticsearch-cluster"
+    </Match>
+    <Target "set">
+      Plugin "elasticsearch"
+      PluginInstance "cluster"
+    </Target>
+  </Rule>
+
+</Chain>
+
+<Plugin curl_json>
+
+  <URL "http://127.0.0.1:9200/_cluster/health">
+    Instance "elasticsearch-cluster"
+
+    <Key "number_of_nodes">
+      Type "gauge"
+      Instance "number_of_nodes"
+    </Key>
+    <Key "number_of_data_nodes">
+      Type "gauge"
+      Instance "number_of_data_nodes"
+    </Key>
+    <Key "active_primary_shards">
+      Type "gauge"
+      Instance "active_primary_shards"
+    </Key>
+    <Key "active_shards">
+      Type "gauge"
+      Instance "active_shards"
+    </Key>
+    <Key "relocating_shards">
+      Type "gauge"
+      Instance "relocating_shards"
+    </Key>
+    <Key "initializing_shards">
+      Type "gauge"
+      Instance "initializing_shards"
+    </Key>
+    <Key "unassigned_shards">
+      Type "gauge"
+      Instance "unassigned_shards"
+    </Key>
+    <Key "number_of_pending_tasks">
+      Type "gauge"
+      Instance "number_of_pending_tasks"
+    </Key>
+  </URL>
+
+  <URL "http://127.0.0.1:9200/_cluster/stats">
+    Instance "elasticsearch-cluster"
+
+    <Key "indices/store/size_in_bytes">
+      Type "bytes"
+      Instance "indices_store_size_in_bytes"
+    </Key>
+    <Key "indices/fielddata/memory_size_in_bytes">
+      Type "bytes"
+      Instance "indices_fielddata_memory_size_in_bytes"
+    </Key>
+    <Key "indices/filter_cache/memory_size_in_bytes">
+      Type "bytes"
+      Instance "indices_filter_cache_memory_size_in_bytes"
+    </Key>
+    <Key "nodes/os/mem/total_in_bytes">
+      Type "bytes"
+      Instance "nodes_os_mem_total_in_bytes"
+    </Key>
+    <Key "jvm/mem/heap_used_in_bytes">
+      Type "bytes"
+      Instance "jvm_mem_heap_used_in_bytes"
+    </Key>
+    <Key "jvm/mem/heap_max_in_bytes">
+      Type "bytes"
+      Instance "jvm_mem_heap_max_in_bytes"
+    </Key>
+    <Key "fs/total_in_bytes">
+      Type "bytes"
+      Instance "fs_total_in_bytes"
+    </Key>
+    <Key "fs/free_in_bytes">
+      Type "bytes"
+      Instance "fs_free_in_bytes"
+    </Key>
+    <Key "fs/available_in_bytes">
+      Type "bytes"
+      Instance "fs_available_in_bytes"
+    </Key>
+    <Key "docs/count">
+      Type "gauge"
+      Instance "docs_count"
+    </Key>
+    <Key "docs/deleted">
+      Type "gauge"
+      Instance "docs_deleted"
+    </Key>
+    <Key "fielddata/evictions">
+      Type "gauge"
+      Instance "fielddata_evictions"
+    </Key>
+    <Key "indices/count">
+      Type "gauge"
+      Instance "indices_count"
+    </Key>
+    <Key "indices/shards/total">
+      Type "gauge"
+      Instance "indices_shards_total"
+    </Key>
+    <Key "indices/shards/primary">
+      Type "gauge"
+      Instance "indices_shards_primary"
+    </Key>
+    <Key "indices/shards/replication">
+      Type "gauge"
+      Instance "indices_shards_replication"
+    </Key>
+    <Key "indices/shards/index/shards/min">
+      Type "gauge"
+      Instance "indices_shards_index_shards_min"
+    </Key>
+    <Key "indices/shards/index/shards/max">
+      Type "gauge"
+      Instance "indices_shards_index_shards_max"
+    </Key>
+    <Key "indices/shards/index/shards/avg">
+      Type "gauge"
+      Instance "indices_shards_index_shards_avg"
+    </Key>
+    <Key "indices/shards/index/primaries/min">
+      Type "gauge"
+      Instance "indices_shards_index_primaries_min"
+    </Key>
+    <Key "indices/shards/index/primaries/max">
+      Type "gauge"
+      Instance "indices_shards_index_primaries_max"
+    </Key>
+    <Key "indices/shards/index/primaries/avg">
+      Type "gauge"
+      Instance "indices_shards_index_primaries_avg"
+    </Key>
+    <Key "indices/shards/index/replication/min">
+      Type "gauge"
+      Instance "indices_shards_index_replication_min"
+    </Key>
+    <Key "indices/shards/index/replication/max">
+      Type "gauge"
+      Instance "indices_shards_index_replication_max"
+    </Key>
+    <Key "indices/shards/index/replication/avg">
+      Type "gauge"
+      Instance "indices_shards_index_replication_avg"
+    </Key>
+    <Key "indices/segments/count">
+      Type "gauge"
+      Instance "indices_segments_count"
+    </Key>
+    <Key "indices/segments/memory_in_bytes">
+      Type "gauge"
+      Instance "indices_segments_memory_in_bytes"
+    </Key>
+    <Key "indices/segments/index_writer_memory_in_bytes">
+      Type "gauge"
+      Instance "indices_segments_index_writer_memory_in_bytes"
+    </Key>
+    <Key "indices/segments/version_map_memory_in_bytes">
+      Type "gauge"
+      Instance "indices_segments_version_map_memory_in_bytes"
+    </Key>
+    <Key "indices/store/throttle_time_in_millis">
+      Type "gauge"
+      Instance "indices_store_throttle_time_in_millis"
+    </Key>
+    <Key "nodes/count/total">
+      Type "gauge"
+      Instance "nodes_count_total"
+    </Key>
+    <Key "nodes/count/master_only">
+      Type "gauge"
+      Instance "nodes_count_master_only"
+    </Key>
+    <Key "nodes/count/data_only">
+      Type "gauge"
+      Instance "nodes_count_data_only"
+    </Key>
+    <Key "nodes/count/master_data">
+      Type "gauge"
+      Instance "nodes_count_master_data"
+    </Key>
+    <Key "nodes/count/client">
+      Type "gauge"
+      Instance "nodes_count_client"
+    </Key>
+    <Key "nodes/os/available_processors">
+      Type "gauge"
+      Instance "nodes_os_available_processors"
+    </Key>
+    <Key "nodes/process/cpu/percent">
+      Type "gauge"
+      Instance "nodes_process_cpu_percent"
+    </Key>
+    <Key "nodes/process/open_file_descriptors/min">
+      Type "gauge"
+      Instance "nodes_process_open_file_descriptors_min"
+    </Key>
+    <Key "nodes/process/open_file_descriptors/max">
+      Type "gauge"
+      Instance "nodes_process_open_file_descriptors_max"
+    </Key>
+    <Key "nodes/process/open_file_descriptors/avg">
+      Type "gauge"
+      Instance "nodes_process_open_file_descriptors_avg"
+    </Key>
+    <Key "jvm/threads">
+      Type "gauge"
+      Instance "jvm_threads"
+    </Key>
+  </URL>
+</Plugin>
+
+    Instance "elasticsearch-cluster"
+
+    <Key "number_of_nodes">
+      Type "gauge"
+      Instance "number_of_nodes"
+    </Key>
+    <Key "number_of_data_nodes">
+      Type "gauge"
+      Instance "number_of_data_nodes"
+    </Key>
+    <Key "active_primary_shards">
+      Type "gauge"
+      Instance "active_primary_shards"
+    </Key>
+    <Key "active_shards">
+      Type "gauge"
+      Instance "active_shards"
+    </Key>
+    <Key "relocating_shards">
+      Type "gauge"
+      Instance "relocating_shards"
+    </Key>
+    <Key "initializing_shards">
+      Type "gauge"
+      Instance "initializing_shards"
+    </Key>
+    <Key "unassigned_shards">
+      Type "gauge"
+      Instance "unassigned_shards"
+    </Key>
+    <Key "number_of_pending_tasks">
+      Type "gauge"
+      Instance "number_of_pending_tasks"
+    </Key>
+  </URL>
+

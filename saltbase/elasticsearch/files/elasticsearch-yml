@@ -1,0 +1,15 @@
+cluster.name: {{ pillar['clustername'] }}
+node.name: {{ grains['fqdn'] }}
+node.master: true
+http.enabled: true
+node.data: true
+http.cors.allow-origin: "*"
+http.cors.enabled: true
+
+index.number_of_shards: 3
+index.number_of_replicas: 1
+
+bootstrap.mlockall: true
+discovery.zen.ping.multicast.enabled: false
+discovery.zen.ping.unicast.hosts: [{%- for host, ip_addrs in salt['mine.get']('roles:elasticsearch', 'network.ip_addrs', 'grain').items() -%}"{{ ip_addrs[0] }}"{%- if not loop.last -%}, {% endif -%}{%- endfor -%}]
+watcher.index.rest.direct_access: true

@@ -1,0 +1,5 @@
+{%- set saltrole = salt['grains.get']('roles')[0] -%}
+JAVA_HOME=/usr/lib/jvm/jre-8-oracle-x64/
+ES_HEAP_SIZE={{ pillar['elasticconfig']['heap_size'][saltrole] }}g
+MAX_OPEN_FILES=65535
+MAX_LOCKED_MEMORY=unlimited

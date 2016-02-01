@@ -1,0 +1,8 @@
+### fibdemo
+### logs
+01 01 * * * root /usr/local/bin/curator close indices --time-unit days --older-than 14 --timestring "\%Y.\%m.\%d" --prefix logs-fibdemo 2>&1 >> /var/log/curator.log
+06 01 * * * root /usr/local/bin/curator delete indices --time-unit days --older-than 14 --timestring "\%Y.\%m.\%d" --prefix logs-fibdemo 2>&1 >> /var/log/curator.log
+### metrics
+01 01 * * * root /usr/local/bin/curator close indices --time-unit days --older-than 7 --timestring "\%Y.\%m.\%d" --prefix metrics-fibdemo 2>&1 >> /var/log/curator.log
+06 01 * * * root /usr/local/bin/curator delete indices --time-unit days --older-than 7 --timestring "\%Y.\%m.\%d" --prefix metrics-fibdemo 2>&1 >> /var/log/curator.log
+
