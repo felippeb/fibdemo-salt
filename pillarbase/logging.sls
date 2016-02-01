@@ -1,1 +1,1 @@
-logging_host: 104.197.24.68
+logging_host: '104.197.24.68'
