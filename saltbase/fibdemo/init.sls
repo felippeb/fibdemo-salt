@@ -9,9 +9,13 @@ docker_fibdemo_{{ pillar['old_fibdemo_ver'] }}:
     - order: 1
 
 docker_fibdemo_image:
-  docker.pulled:
-    - name: {{ pillar['docker_repo'] }}/fibdemo:{{ fibdemo_ver }}
-    - force: True
+  cmd.run:
+    - unless: docker images | grep {{ pillar['docker_repo'] }}/fibdemo | awk '{print $2}' | grep {{ fibdemo_ver }}
+    - name: gcloud docker pull {{ pillar['docker_repo'] }}/fibdemo:{{ fibdemo_ver }}
+    - shell: /bin/bash
+    - user: root
+    - group: root
+    - cwd: /root
     - order: 119
     - require:
       - pkg: docker-engine
