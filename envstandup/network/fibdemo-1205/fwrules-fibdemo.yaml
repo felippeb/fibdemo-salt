@@ -20,6 +20,10 @@ fibdemo-saltbot-ssh:
   src_range: 24.2.73.250/32
   dst_tags: saltmaster
 
+fibdemo-ssh-felippeb:
+  allow: tcp:22
+  src_range: 24.2.73.250/32
+
 fibdemo-https-world:
   allow: tcp:443
   src_range: 0.0.0.0/0
