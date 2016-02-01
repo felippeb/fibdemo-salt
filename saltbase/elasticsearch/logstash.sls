@@ -20,7 +20,7 @@ logstash:
 
 /etc/logstash/conf.d/collectd.conf:
   file.managed:
-    - source: salt://esagg/files/logstash/collectd.conf
+    - source: salt://elasticsearch/files/logstash/collectd.conf
     - user: root
     - group: root
     - mode: 0644
