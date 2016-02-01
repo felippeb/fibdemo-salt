@@ -1,4 +1,5 @@
 include:
+  - logging
   - collectd
 
 javaoraclejre:

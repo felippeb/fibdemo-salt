@@ -5,6 +5,7 @@ base:
     - users
     - saltminion
     - collectd
+    - logging
 
   'roles:fibdemo':
     - match: grain

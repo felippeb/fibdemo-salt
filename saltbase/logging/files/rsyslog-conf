@@ -1,0 +1,15 @@
+$ModLoad imuxsock
+$ModLoad imklog
+$ModLoad imudp
+global(workDirectory="/var/spool/rsyslog")
+module(load="imfile" mode="inotify")
+$UDPServerRun 514
+$UDPServerAddress 127.0.0.1
+$ActionFileDefaultTemplate RSYSLOG_FileFormat
+$RepeatedMsgReduction on
+$FileOwner syslog
+$FileGroup adm
+$FileCreateMode 0640
+$DirCreateMode 0755
+$Umask 0022
+$IncludeConfig /etc/rsyslog.d/*.conf
