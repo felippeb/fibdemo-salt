@@ -5,6 +5,7 @@ http.enabled: true
 node.data: true
 http.cors.allow-origin: "*"
 http.cors.enabled: true
+http.port: 9201-9300
 
 index.number_of_shards: 3
 index.number_of_replicas: 1
