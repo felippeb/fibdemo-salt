@@ -18,3 +18,4 @@ ext_pillar:
     - master git@github.com:rhohan/fibdemo-salt.git:
       - root: pillarbase
       - env: base
+state_output: mixed
