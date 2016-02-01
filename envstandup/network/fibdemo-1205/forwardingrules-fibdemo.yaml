@@ -4,6 +4,12 @@ fibdemo-kibana-rule:
   region: us-east1
   target_pool: fibdemo-kibana-pool-client-ip-proto
 
+fibdemo-kibana-rule-25825:
+  ip_protocol: UDP
+  port_range: 25825
+  region: us-east1
+  target_pool: fibdemo-kibana-pool-client-ip-proto
+
 fibdemo-kibana-rule-9200:
   ip_protocol: TCP
   port_range: 9200
