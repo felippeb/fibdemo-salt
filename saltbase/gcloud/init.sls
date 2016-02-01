@@ -23,7 +23,7 @@ google-cloud-sdk:
     - mode: 755
     - makedirs: true
 
-/opt/gcloud/fibdemo-a96cb930a7c2.json:
+/opt/gcloud/fibdemo-auth.json:
   file.managed:
     - source: salt://gcloud/files/fibdemo-auth.json
 {%- if 'jenkins' in grains['id'] %}
