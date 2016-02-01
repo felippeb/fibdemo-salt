@@ -32,7 +32,7 @@ docker_fibdemo_container:
       - pkg: docker-package
     - order: 120
 
-docker_fibdemo_running:
+docker_fibdemo_{{ fibdemo_ver }}:
   docker.running:
     - container: docker_fibdemo_{{ fibdemo_ver }}
     - image: {{ pillar['docker_repo'] }}/fibdemo:{{ fibdemo_ver }}
