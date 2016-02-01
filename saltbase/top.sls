@@ -22,6 +22,8 @@ base:
   'roles:elasticsearch':
     - match: grain
     - elasticsearch
+    - elasticsearch.kibana4
+    - elasticsearch.logstash
 
   'roles:saltmaster':
     - match: grain
