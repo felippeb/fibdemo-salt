@@ -11,8 +11,8 @@ server {
   
   server_name kibana.fibdemo.com; 
   
-  access_log syslog:server=unix:/dev/log,facility=local7,tag=nginx,severity=info access_combined;
-  error_log syslog:server=unix:/dev/log,facility=local7,tag=nginx,severity=error;
+  access_log syslog:server=unix:/dev/log,facility=local7,nohostname,tag=nginx,severity=info access_combined;
+  error_log syslog:server=unix:/dev/log,facility=local7,nohostname,tag=nginx,severity=error;
 
   ssl on;
   ssl_certificate /etc/nginx/certs/kibana.crt;
@@ -40,8 +40,8 @@ server {
   listen 9200 default;
   server_name kibana.fibdemo.com;
   
-  access_log syslog:server=unix:/dev/log,facility=local7,tag=nginx,severity=info access_combined;
-  error_log syslog:server=unix:/dev/log,facility=local7,tag=nginx,severity=error;
+  access_log syslog:server=unix:/dev/log,facility=local7,nohostname,tag=nginx,severity=info access_combined;
+  error_log syslog:server=unix:/dev/log,facility=local7,nohostname,tag=nginx,severity=error;
 
   location / {
       proxy_pass http://elasticsearch-9201/; 

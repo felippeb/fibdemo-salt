@@ -9,13 +9,10 @@ docker_fibdemo_{{ pillar['old_fibdemo_ver'] }}:
     - order: 1
 
 docker_fibdemo_image:
-  cmd.run:
-    - unless: docker images | grep {{ pillar['docker_repo'] }}/fibdemo
-    - name: gcloud docker pull {{ pillar['docker_repo'] }}/fibdemo:{{ fibdemo_ver }}
-    - shell: /bin/bash
-    - user: root
-    - group: root
-    - cwd: /root
+  docker.pulled:
+    - name: {{ pillar['docker_repo'] }}/fibdemo:{{ fibdemo_ver }}
+    - force: True
+    - order: 119
     - require:
       - pkg: docker-engine
       - pkg: google-cloud-sdk
