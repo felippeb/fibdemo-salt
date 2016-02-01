@@ -5,3 +5,7 @@ base:
     - users
     - collectd
     - docker
+
+  'roles:fibdemo':
+    - match: grain
+    - fibdemo

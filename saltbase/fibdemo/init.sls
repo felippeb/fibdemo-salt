@@ -4,7 +4,7 @@ include:
   - gcloud
   - nginx
 
-docker_fibdemo_{{ pillar['old_fibdemo_version'] }}:
+docker_fibdemo_{{ pillar['old_fibdemo_ver'] }}:
   docker.absent:
     - order: 1
 
