@@ -4,6 +4,9 @@ include:
   - gcloud
   - nginx
 
+python-m2crypt:
+  pkg.installed
+
 docker_fibdemo_{{ pillar['old_fibdemo_ver'] }}:
   docker.absent:
     - order: 1
