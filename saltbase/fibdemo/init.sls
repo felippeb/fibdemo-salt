@@ -1,4 +1,4 @@
-{% set fibdemo_ver = pillar['fibdemo_version'] %}
+{% set fibdemo_ver = pillar['fibdemo_ver'] %}
 include:
   - docker
   - gcloud
