@@ -48,6 +48,7 @@ elasticsearch:
     - group: root
     - mode: 644
 
+{% if '01' in grains['id'] %}
 /etc/collectd/collectd.conf.d/elasticearch-node.conf:
   file.managed:
     - user: root
@@ -56,7 +57,7 @@ elasticsearch:
     - source: salt://elasticsearch/files/collectd-elasticsearch-node
     - require:
       - pkg: collectdpackage
-
+{% else %}
 /etc/collectd/collectd.conf.d/elasticearch-cluster.conf:
   file.managed:
     - user: root
@@ -65,6 +66,7 @@ elasticsearch:
     - source: salt://elasticsearch/files/collectd-elasticsearch-cluster
     - require:
       - pkg: collectdpackage
+{% endif %}
 
 python-elasticsearch-curator:
   pkgrepo.managed:
