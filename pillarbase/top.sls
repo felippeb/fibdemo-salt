@@ -5,7 +5,12 @@ base:
     - users
     - collectd
     - docker
+    - logging
 
   'roles:fibdemo':
     - match: grain
     - fibdemo
+
+  'roles:elasticsearch':
+    - match: grain
+    - elasticsearch
