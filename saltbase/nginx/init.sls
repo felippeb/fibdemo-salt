@@ -1,5 +1,5 @@
 nginx-stable-ppa:
-  pkgrepo.removed:
+  pkgrepo.purged:
     - ppa: nginx/stable 
 
 nginx-development-ppa:
