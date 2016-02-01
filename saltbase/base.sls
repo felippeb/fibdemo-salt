@@ -6,6 +6,7 @@ pkg-core:
       - python-apt
       - python-software-properties
       - sysstat
+      - python-m2crypto
 
 set-utc-timezone:
   timezone.system:

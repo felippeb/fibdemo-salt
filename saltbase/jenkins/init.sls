@@ -9,7 +9,6 @@ pkg-core-jenkins:
       - openjdk-7-jre-headless
       - unzip
       - ruby1.9.1-full
-      - python-m2crypto
       - zip
 
 jenkins_group:
