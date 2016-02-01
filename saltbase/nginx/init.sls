@@ -1,6 +1,10 @@
 nginx-stable-ppa:
-  pkgrepo.managed:
+  pkgrepo.removed:
     - ppa: nginx/stable 
+
+nginx-development-ppa:
+  pkgrepo.managed:
+    - ppa: nginx/development
 
 nginx:
   pkg:
