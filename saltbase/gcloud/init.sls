@@ -25,7 +25,7 @@ google-cloud-sdk:
 
 /opt/gcloud/fibdemo-a96cb930a7c2.json:
   file.managed:
-    - source: salt://gcloud/files/fibdemo-a96cb930a7c2.json
+    - source: salt://gcloud/files/fibdemo-auth.json
 {%- if 'jenkins' in grains['id'] %}
     - user: jenkins
     - group: jenkins

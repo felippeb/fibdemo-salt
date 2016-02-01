@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "fibdemo-1205",
+  "private_key_id": "0d4b86d2bc51bf57625ec0cd86cac0228c9816d0",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCLKQ4BFI7Ho4nP\nFewLKRSEGAamU5DiTzaRFvtduipaFkZMZpUmdaybsu1jsupOCWkomNNWA+YHYt3F\nLeJxxCbEo+E9lSCqc6coAg0RssL3IOyI4Zen6xpx8MWv1+B0iDmoocy+mn1uTWaD\n+sZRqClAgWy0cuEb07peLrtBlbUMvFsxptRyOm9eE2nmElI99Pr6xnsL0BHPy+vs\n3rN8DNqbTX+2SAJpjKqWjB8SZCgqfum4pVgU/DFfffFmtre7xTbbj7Q4AjJ8pS1C\nZzedUqHSbLi0wjVOmYI+8LlLbbS0DMDOsI2Y6uQ/4tvlDL76FW83bUwcmr3EahNj\n9ZhaKSj1AgMBAAECggEABcGqAaNvEJUUQ0u92uxVG+2+gKzeRm5ObIwN09+6lsVr\nHQf1TYT6oeox5bjl9lpvTi2cOGeq4U1WrSxrvJcHn4TD8X80vbhRBtem4L+LTxu+\njR7/3gNcsa/rDY4Zi9iCwhYHWS8c1y4+emEqSQByzGdOLty9sR/+Cp1WQ61EswUc\nBs76HYYnm1fsCmK7fvlrlgmwq2y37ZcBK4WnxUO7wPuMKLbocbKqDQ9MID093hoN\n0rml/k78fNB596ZEs+nVhXKExcn6TQXnDqbkzNUPFuohZK0cPj+MEK2wZ4WPGKgz\nqyarmVqlulGrPZ+HZ78LVAbHd4ZmVCEZG6qBmE0GFQKBgQC+yGzYPj8t93jgFEw4\nBrMhtfTZOactTxx/fWU6EFbXYlURm+WuJItcwPHnVmqfBLqalFmo7YiIxIL1Cuo8\nvDhRY+N1jlJkJifRUv6ehrIV8lF2hzsV3Ophcie/+Nj8O5yRC+RY93qZh4OJNlW4\niiGuObpvUOPT9XZSA0BKpHvO1wKBgQC6uxjY7u100XLXaXM0Njn1RXQshyVFW90m\ngeelhvQlVq/9I9Iek3ddiSzxzipAZ2c1Se3AuOBFwYLkLC8IP54i0gnmDvB7bZsY\n1mOlG1yolay/CF6GhyO4Ppi2WgtcYXar5zc37vFGkYYs4gMiFFABSo3897tFWwvQ\nCWWUdL7JEwKBgFzu3LZpe/U0O1lMCeSwvsmJDQBTqS/U/ZjMyGaEVwkMCUxOmI8/\nlfNUuYFrAvz7HLr30MUNEBkvQGuFKZz0QqrC8aXt8gx+2Z6JwyYNjupJ44zNSubX\negSFyv8khO45S4cMN+tugfYPoO9R3GfMQaPQ0xQuXwx84WoJ02OIxBZ5AoGBAIkZ\nkdbFJkdc+Mq8O7+cCNXSlseSuoTAPBFn06KvAVbg3PopcL7OWxer/fnT+yWqRhbU\nHuIfW1scB3RsFGQkAYFjYa0uTtbw1K1Zy3OQMWn96wWfqXdwhYNjQlCwsCK11KHG\nc753i2Lauf7+OnqtG0i3aqTPZwo3HOcz3wcu6F1NAoGATICAEkFEirXDjHw4vD3E\nAImHrlO+nSIRo4lKGtGsdPUxaSWLodejRRCHLYvjAK8/btT1WO1lhFJoUPE9qVUZ\nvU66H3uS45m3TCZR1+R2P26dRYHoWRayQIh0vgS2YfFtUscHFbaaQw5KoHEnsXFS\n/ZZSnNTLooXN3XQNFcSXVHY=\n-----END PRIVATE KEY-----\n",
+  "client_email": "fibdemodockerrepo@fibdemo-1205.iam.gserviceaccount.com",
+  "client_id": "115348043135288393476",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/fibdemodockerrepo%40fibdemo-1205.iam.gserviceaccount.com"
+}
