@@ -86,7 +86,7 @@ docker_fibdemo_running:
     - mode: 440
     - require:
       - x509: /etc/nginx/certs/fibdemo.crt
-      - pkg: fibdemo
+      - pkg: nginx
 
 /etc/nginx/sites-enabled/fibdemo.conf:
   file.symlink:
