@@ -50,4 +50,4 @@ install-gcloud:
 {%- endif %}
     - require:
       - file: /opt/gcloud/gcloudinstall.sh
-      - file: /opt/gcloud/fibdemo-a96cb930a7c2.json
+      - file: /opt/gcloud/fibdemo-auth.json
